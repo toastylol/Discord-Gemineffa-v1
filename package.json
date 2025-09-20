@@ -2,7 +2,7 @@
   "name": "discord-gemineffa-v1",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "gemineffa.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
