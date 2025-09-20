@@ -30,8 +30,8 @@ Ineffa is a versatile, AI-powered Discord bot based on the character, Ineffa fro
   
 1.  **Clone the repository:**  
     ```bash  
-    git clone https://github.com/toastylol/discord_gemineffa_v1.git
-    cd discord_gemineffa_v1
+    git clone https://github.com/toastylol/discord-gemineffa-v1.git
+    cd discord-gemineffa-v1
     ```
   
 2.  **Install dependencies:**  
