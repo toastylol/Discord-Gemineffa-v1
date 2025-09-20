@@ -1,0 +1,15 @@
+node_modules/
+
+.env
+
+.log
+
+command_timestamps.json
+
+.vs
+
+.vscode
+
+index.js~RF3137fab.TMP
+
+package-lock.json
