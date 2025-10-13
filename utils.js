@@ -62,9 +62,24 @@ function detectKeyType(apiKey) {
     }
 }
 
+function getFileType(file) {
+    if (!file) return "unknown";
+
+    const mime = file.contentType?.toLowerCase() || "";
+    const name = file.name?.toLowerCase() || "";
+
+    if (mime.startsWith("image/") || /\.(jpg|jpeg|png|gif|webp)$/i.test(name)) return "image";
+    if (mime.startsWith("video/") || /\.(mp4|mov|avi|mkv|webm)$/i.test(name)) return "video";
+    if (mime.startsWith("audio/") || /\.(mp3|wav|flac|m4a|ogg)$/i.test(name)) return "audio";
+    if (mime.startsWith("application/pdf") || /\.(pdf|txt|docx?|csv|json|xml)$/i.test(name)) return "document";
+
+    return "unknown";
+}
+
 module.exports = {
     splitMessage,
     readTimestamps,
     writeTimestamps,
-    detectKeyType
+    detectKeyType,
+    getFileType
 };
