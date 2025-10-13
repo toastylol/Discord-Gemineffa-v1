@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
+const { getFileType } = require("../utils");
 
 async function fetchAndEncodeFile(url) {
     const res = await fetch(url);
@@ -59,8 +60,13 @@ module.exports = {
                          .setFooter({ text: "Analysis powered by Ineffa using Google." })
                          .setTimestamp()
                          
-                    if (file.contentType && file.contentType.startsWith('image/')) {
+                    if (getFileType(file) === "image") {
                         embed.setImage(file.url);
+                    } else if (getFileType(file) === "video")  {
+                            interaction.followUp({
+                            content: `**Uploaded Video:** ${file.name}`, 
+                            files: [{ attachment: file.url, name: file.name }],
+                        });
                     } else {
                          embed.addFields({
                             name: 'Original File',
