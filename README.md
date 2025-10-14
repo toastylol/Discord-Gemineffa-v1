@@ -22,7 +22,7 @@ Ineffa is a versatile, AI-powered Discord bot based on the character, Ineffa fro
 ## Setup and Installation  
   
 ### Prerequisites  
-* [Node.js](https://nodejs.org/) (v16.9.0 or higher)  
+* [Node.js](https://nodejs.org/) (v16.9.0 or higher) (v18.17.0 is recommended)
 * A Discord Bot Application with a Token  
 * API Keys for Google Gemini  
   
