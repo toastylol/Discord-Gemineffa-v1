@@ -76,10 +76,29 @@ function getFileType(file) {
     return "unknown";
 }
 
+function formatDuration(ms) {
+    let totalSeconds = Math.floor(ms / 1000);
+    const seconds = totalSeconds % 60;
+    const min = Math.floor(totalSeconds / 60);
+    const hours = Math.floor(totalSeconds / 3600);
+    totalSeconds %= 3600;
+    const days = Math.floor(totalSeconds / 86400);
+    totalSeconds %= 86400;
+
+    const parts = [];
+        if (days > 0) parts.push(`${days}d`);
+        if (hours > 0) parts.push(`${hours}h`);
+        if (min > 0) parts.push(`${min}m`);
+        if (seconds > 0 || parts.length === 0) parts.push(`${seconds}s`);
+    
+    return parts.join("" );
+}
+
 module.exports = {
     splitMessage,
     readTimestamps,
     writeTimestamps,
     detectKeyType,
-    getFileType
+    getFileType,
+    formatDuration
 };
