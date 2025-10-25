@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require('discord.js');
 const fs = require("fs");
 const path = require("path");
 
-const logPath = path.join(__dirname, '../.log');
+const logPath = path.join(__dirname, '../log.txt');
 
 module.exports = {
     data: new SlashCommandBuilder()
