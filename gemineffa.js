@@ -66,7 +66,6 @@ client.on('ready', () => {
         { name: 'Directives', type: ActivityType.Listening, state: 'Delivering information methodically...'},
         { name: 'and Observing', type: ActivityType.Watching, state: 'Monitoring surroundings, scanning for anomalies and delivering situational updates...'},
         { name: `with ${process.env.CREATOR_NAME}`, type: ActivityType.Playing, state: 'Supporting family with quiet reliability...'},
-        { name: `users in ${serverCount} servers`, type: ActivityType.Watching, state: 'Assisting wherever needed...'},
     ];
 
     client.user.setPresence({
