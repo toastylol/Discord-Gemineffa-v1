@@ -87,11 +87,10 @@ function formatDuration(ms) {
   	const seconds = totalSeconds % 60;
 
   	const parts = [];
-  
-  	if (days > 0) parts.push(`${days}d`);
-  	if (hours > 0) parts.push(`${hours}h`);
-  	if (min > 0) parts.push(`${min}m`);
-  	if (seconds > 0 || parts.length === 0) parts.push(`${seconds}s`);
+        if (days > 0) parts.push(`${days}d`);
+  	    if (hours > 0) parts.push(`${hours}h`);
+  	    if (min > 0) parts.push(`${min}m`);
+  	    if (seconds > 0 || parts.length === 0) parts.push(`${seconds}s`);
 
   	return parts.join("");
 }
