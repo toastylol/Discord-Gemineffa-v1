@@ -1,8 +1,6 @@
 # ineffa - multifunctional discord bot
 
-
-https://github.com/user-attachments/assets/ed108822-f838-4c65-be95-3812e97b5a29
-
+https://github.com/user-attachments/assets/4c1b731a-43df-421a-8e89-70737ced2756
 
 ineffa is a versatile, ai-powered discord bot based on the character, ineffa from genshin impact; designed to assist with server moderation, provide information, and engage with users through conversation, it is built with node.js, discord.js, and powered by the google gemini api.
 
