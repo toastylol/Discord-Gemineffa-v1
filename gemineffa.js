@@ -323,7 +323,7 @@ client.on('messageCreate', async function ineffaChatHandler(message) {
     
     /*
      * initial filters to prevent the bot from responding to itself, other bots,
-     * or messages that don't directly involve it (mentions/replies).
+     * or messages that don't directly involve it (mentions/replies) and a permission check.
      */
     
     if (message.author.bot || message.mentions.everyone || message.mentions.roles.size > 0) return;
@@ -333,6 +333,16 @@ client.on('messageCreate', async function ineffaChatHandler(message) {
     const isReplyToBot = repliedToMessage && repliedToMessage.author.id === client.user.id;
     
     if (!isDirectMention && !isReplyToBot) return;
+
+    if (message.guild) {
+        const botPermissions = message.channel.permissionsFor(message.guild.members.me);
+        
+        // if permissions can't be resolved or she can't send messages, stop immediately
+        if (!botPermissions || !botPermissions.has(PermissionsBitField.Flags.SendMessages)) {
+            console.log(`Ineffa lacks SendMessages permission in #${message.channel.name} (${message.guild.name}). Call aborted.`);
+            return; 
+        }
+    }
     
     // per-user rate limiting prevents spam and protects the api quota by enforcing a 15-second delay between prompts for each user.
     
