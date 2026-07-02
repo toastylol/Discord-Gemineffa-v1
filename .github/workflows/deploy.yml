@@ -33,7 +33,7 @@ jobs:
                 key: ${{ secrets.SSH_KEY }}     # the private ssh key for authentication.
                 # the script to be executed on the remote server.
                 script: |
-                    cd $HOME/ineffa/discord-gemineffa-v1
+                    cd $HOME/ineffa
                     git fetch --all
                     git reset --hard origin/main
                     npm install --production
