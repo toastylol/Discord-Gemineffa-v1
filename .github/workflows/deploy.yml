@@ -7,11 +7,16 @@ permissions:
   contents: read
   pull-requests: write
 
-# specifies the trigger for this workflow.
+  # specifies the trigger for this workflow.
 on:
-    push:
-        branches: [ main ]
-
+  # allows to manually run the job at any time
+  workflow_dispatch:
+  
+  # run on every push on the main branch
+  push:
+    branches:
+    - main
+  
 jobs:
     deploy:
         runs-on: ubuntu-latest
